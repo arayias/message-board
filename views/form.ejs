@@ -4,28 +4,32 @@
     <title><%= title %></title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
-  <body>
+  <body class="submit-msg">
     <h1><%= title %></h1>
     <p>Submit your very own message!</p>
     <form action="/new" method="post">
-      <label for="user"></label>
-      <input
-        type="text"
-        name="user"
-        placeholder="username"
-        id="user"
-        required
-      />
-      <label for="text"></label>
-      <input
-        type="text"
-        name="text"
-        placeholder="your message goes here!"
-        id="text"
-        minlength="1"
-        maxlength="140"
-        required
-      />
+      <div class="form-container">
+        <label for="user">User</label>
+        <input
+          type="text"
+          name="user"
+          placeholder="username"
+          id="user"
+          required
+        />
+      </div>
+      <div class="form-container">
+        <label for="text">Message</label>
+        <input
+          type="text"
+          name="text"
+          placeholder="your message goes here!"
+          id="text"
+          minlength="1"
+          maxlength="140"
+          required
+        />
+      </div>
       <button>✅</button>
     </form>
   </body>

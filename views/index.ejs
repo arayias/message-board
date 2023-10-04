@@ -5,12 +5,17 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
+    <h1><%= title %></h1>
     <p>Welcome to the <%= title %></p>
-    <p>Click <a href="/form">here</a> to leave your own mark</p>
+    <p>Click <a href="/new">here</a> to leave your own mark</p>
     <h3>History</h3>
     <ul>
       <% messages.forEach(function(message) { %>
-      <li><%= message.user %>: <%= message.text %></li>
+      <li>
+        <strong><%= message.user %>:</strong>
+        <%= message.text %>
+        <div class="message-time"><%= message.added %></div>
+      </li>
       <% }); %>
     </ul>
   </body>

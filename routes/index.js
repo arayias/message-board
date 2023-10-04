@@ -14,9 +14,14 @@ const messages = [
   },
 ];
 
-/* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Message Board", messages: messages });
+  const passedMessages = [...messages].map((entry) => {
+    typeof entry.added === "object"
+      ? (entry.added = entry.added.toLocaleTimeString())
+      : (entry.added = entry.added);
+    return entry;
+  });
+  res.render("index", { title: "Message Board", messages: passedMessages });
 });
 
 router.get("/new", function (req, res, next) {
@@ -24,7 +29,13 @@ router.get("/new", function (req, res, next) {
 });
 
 router.post("/new", function (req, res, next) {
-  res.render("form", { title: "Message Board" });
+  const { user, text } = req.body;
+  messages.push({
+    text,
+    user,
+    added: new Date(),
+  });
+  res.redirect("/");
 });
 
 module.exports = router;

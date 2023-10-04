@@ -4,5 +4,72 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+}
+
+.form-container label {
+  text-align: left;
+  margin-top: 5px;
+}
+
+.submit-msg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form > button {
+  margin-top: 10px;
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+form > button:hover {
+  scale: 1.1;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 2em;
+}
+
+li {
+  position: relative;
+  padding: 0.5em 0.2em;
+}
+
+li:nth-child(2n + 1) {
+  background-color: #f2f2f2;
+}
+
+li > div {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0.5em;
+  background-color: #ccc;
+  display: none;
+}
+
+li:hover {
+  background-color: #ddd;
+}
+
+li:hover > div {
+  display: flex;
 }
